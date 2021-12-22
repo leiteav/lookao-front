@@ -1,0 +1,26 @@
+
+	const pet = 
+		[
+
+			{
+				"id":1,
+				"name":"mylon",
+				"raca":"viralata",
+				"especie":"canina",
+				"situacao": "perdido",
+				"endereco":11347640,
+				"img":"./img/pet1.jpg",
+				"descricao":"ele esta perdido, na região do bairro Rio Branco, desde o dia 15/10.  Ele é um viralata muito docio da cor caramelo, ele tem uma faixa branca perto do seu rabo"
+			},
+
+			{
+				"name":"loke",
+				"raca":"pinsher",
+				"especie":"canina",
+				"situacao": "perdido",
+				"endereco": 11704710,
+				"img":"./img/pet2.jpg",
+				"descricao":" Ele ainda é um filhote, e é bem medroso. Caso tenha encontrado ele aproxime-se bem devagar"
+			}
+		]
+	

@@ -1,0 +1,184 @@
+:root{
+	--amarelo:#faae02  ;
+	--marrom: #C28F61;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color:var(--amarelo);
+}
+
+
+.wrapper{
+	max-width: 450px;
+	margin: 150px auto;
+}
+
+.wrapper .search-input{
+	position: relative;
+	background-color: #fff;
+	width: 100%;
+	border-radius: 5px;
+	box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0, 0.12);
+
+}
+
+.search-input input{
+	height: 55px;
+	width: 100%;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	padding: 0 60px 0 20px;
+	font-size: 18px;
+	box-shadow: 0px, 1px 5px, rgba(0, 0, 0, 0, 1.0);
+}
+
+.search-input .icon{
+	height: 55px;
+	width: 55px;
+	line-height: 55px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: center;
+	font: 20px;
+	color: var(--marrom);
+	cursor: pointer;
+}
+
+.search-input .autocom-box{
+	padding: 0px;
+	max-height: 280px;
+	overflow-y: auto;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.search-input.active .autocom-box{
+	padding: 10px 8px;
+	opacity: 1;
+	pointer-events:auto;
+}
+
+
+.autocom-box li{
+	list-style: none;
+	padding: 8px 12px;
+	width: 100%;
+	cursor: default;
+	border-radius: 3px;
+	display: none;
+}
+
+.search-input.active .autocom-box li{
+	display: block;
+}
+
+.autocom-box li:hover{
+	background: #efefef;
+}
+
+.card-container{
+	display: flex;
+
+}
+h2.nome-pet{
+	margin-top: -45px;
+    background: var(--amarelo);
+    border: none;
+    border-radius: 15px;
+    color: brown;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+	margin-left:50px;
+	display: grid;
+	grid-template-columns: 300px;
+	grid-template-rows: 210px 210px 80px;
+	grid-template-areas: "image" "text" "stats";
+	width: 300px;
+
+	font-family: reboto;
+	border-radius: 5px;
+	background: white;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+	text-align: center;
+
+}
+
+.card-image{
+	grid-area: image;
+	background: url("../img/pet1.jpg");
+	border-radius: 5px;
+	background-size: cover;
+}
+.card-text{
+	grid-area: text;
+	margin: 25px;
+}
+
+.card-text .date{
+	color: rgb(255, 7, 110);
+	font-size: 15px;
+	font-weight: 300;
+}
+
+.card-text .h2{
+	margin-top: 0px;
+	font-size: 28px;
+}
+
+.card-stats{
+	grid-area: stats;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	background: var(--marrom);
+}
+
+.card-stats .stats{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+	color: white;
+}
+.card-stats .type{
+	font-size: 11px;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+.card-stats .value{
+	font-size: 18px;
+	font-weight: 500;
+	font-style: bold;
+	
+}
+
+.filter-container .btn-filter{
+	background-color: #0000;
+	border: 2px solid #000;
+	padding: 1em 2.2em;
+	background-color: white;
+	color: black;
+	cursor: pointer;
+	border-radius: 3em;
+
+}
+
+.btn-active{
+	background-color: #cccc !important;
+	color: black !important;
+}
