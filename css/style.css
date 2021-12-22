@@ -107,7 +107,7 @@ h2.nome-pet{
 	width: 300px;
 
 	font-family: reboto;
-	border-radius: 18px;
+	border-radius: 5px;
 	background: white;
 	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
 	text-align: center;
@@ -117,8 +117,7 @@ h2.nome-pet{
 .card-image{
 	grid-area: image;
 	background: url("../img/pet1.jpg");
-	border-top-right-radius: 15px;
-	border-top-left-radius: 15px;
+	border-radius: 5px;
 	background-size: cover;
 }
 .card-text{
@@ -143,8 +142,8 @@ h2.nome-pet{
 	grid-template-rows: 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
 
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 	background: var(--marrom);
 }
 
@@ -166,4 +165,20 @@ h2.nome-pet{
 	font-weight: 500;
 	font-style: bold;
 	
+}
+
+.filter-container .btn-filter{
+	background-color: #0000;
+	border: 2px solid #000;
+	padding: 1em 2.2em;
+	background-color: white;
+	color: black;
+	cursor: pointer;
+	border-radius: 3em;
+
+}
+
+.btn-active{
+	background-color: #cccc !important;
+	color: black !important;
 }

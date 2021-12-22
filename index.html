@@ -10,11 +10,24 @@
 <body>
 	<div class="wrapper">
 		<div class="search-input">
-			<input placeholder="Digite o CEP ou a raça, especie" type="text">
+			<input placeholder="Digite o CEP da região em que você procura" type="text">
 			<div class="autocom-box">
 				
 			</div>
 			<div class="icon"><i class="fas fa-search"></i></div>
+		</div>
+		<div class="filter-container">
+			<button id="todos" onclick="SwitchOption('todos')" class="btn-filter ">Todos</button>
+			<button id="perdido" onclick="SwitchOption('perdido')" class="btn-filter">Perdido</button>
+			<button id="localizado" onclick="SwitchOption('localizado')" class="btn-filter">Localizado</button>
+			<!-- <select>
+				<option value="">todos</option>
+				<option value="">canina</option>
+				<option value="">felino</option>
+				<option value="">roedor</option>
+				<option value="">ave</option>
+				<option value="">outro</option>
+			</select> -->
 		</div>
 	</div>
 	<div class="card-container">

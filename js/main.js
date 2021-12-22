@@ -5,7 +5,17 @@ const cardContainer = document.querySelector(".card-container");
 const Card = document.querySelector(".card")
 
 
+async function getContent(){
+	try{
+		const response = await fetch('http://localhost:3030/raca');
+		console.log(response.json())
+	}catch(err){
+		console.error(err)
+	}
+		
+}
 
+getContent()
 // const listasPet = () => {
 // 	const card = document.createElement('div');
 // 	card.classList.add("card");
@@ -17,7 +27,9 @@ const Card = document.querySelector(".card")
 
 inputBox.onkeyup = (e) =>{
 	const CEP = e.target.value;
+
 	const validaCEP = /^[0-9]{8}$/
+	
 	if (CEP == "") {
 		searchWrapper.classList.remove('active');
 		suggBox.innerHTML = ``;		
@@ -41,9 +53,11 @@ const resultPet = (search) =>{
 	})
 	
 	console.log(filter);
-
+	let btnAll = document.getElementById('todos')
+	btnAll.classList.add('btn-active')
 	searchWrapper.classList.add('active')
-	suggBox.innerHTML = `<li>Resultado para: ${search}</li>`
+	suggBox.innerHTML = `<li>Resultado para: ${search}</li>`;
+
 }
 
 const resultCEP = (res) =>{
@@ -51,10 +65,32 @@ const resultCEP = (res) =>{
 	{
 		suggBox.innerHTML = `<li>Resultado para: ${res.logradouro}, ${res.bairro} </li>`		
 		searchWrapper.classList.add('active')
-		suggBox.innerHTML = `<li>Resultado para: ${res.logradouro}, ${res.bairro} </li>`		
 	}
 
 }
+
+const SwitchOption = (value) =>{
+	let buttons = document.querySelectorAll('.btn-filter')
+	buttons.forEach(btn =>{
+		if (value.toLowerCase() == btn.innerText.toLowerCase()) {
+			btn.classList.add('btn-active')
+			const filter = pet.filter((pets)=>{
+				return pets.situacao == value.toLowerCase()
+			})
+			if (filter.length != 0) {
+				console.log(filter);
+			}
+			else{
+				console.log(pet)
+			}
+
+		}
+		else{
+			btn.classList.remove('btn-active')
+		}
+	})
+}
+
 
 const pet = [
 
@@ -87,7 +123,7 @@ const pet = [
 					name:"loke",
 					raca:"pinsher",
 					especie:"canina",
-					situacao: "perdido",
+					situacao: "localizado",
 					endereco: 11704710,
 					img:"./img/pet2.jpg",
 					descricao:" Ele ainda é um filhote, e é bem medroso. Caso tenha encontrado ele aproxime-se bem devagar"
